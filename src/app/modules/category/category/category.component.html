@@ -1,0 +1,73 @@
+<div class="w-full h-screen overflow-y-scroll bg-gray-200">
+  <div [ngClass]="{'blur': showModal}" class="flex-1 overflow-y-auto">
+    <div class="flex flex-col justify-center p-6 2xl:p-10">
+      <!-- Existing code -->
+      <h1 class="text-3xl text-center text-gray-700 font-bold mb-6">
+        Manage Categories
+      </h1>
+      <p class="text-center text-xl text-red-600 font-semibold">
+        {{ deleteMessage }}
+      </p>
+      <div class="mb-4 ml-6">
+        <button
+          routerLink="/category/add"
+          class="flex items-center text-gray-50 font-semibold py-1 px-3 rounded-md
+          transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:bg-indigo-500 duration-300 bg-gradient-to-r from-sky-500 to-indigo-500"
+        >
+          <p class="text-base pr-2">Create New</p>
+          <fa-icon class="text-2xl" [icon]="plusIcon"></fa-icon>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-8 p-6">
+        <!-- Category Card -->
+        <div
+          *ngFor="let category of categories"
+          class="group relative p-4 border border-gray-300 bg-slate-100 rounded-lg transform transition duration-500 hover:scale-105 shadow-lg"
+        >
+          <img
+            class="mx-auto mb-4 h-32 w-44 -object-contain cursor-pointer"
+            [src]="category.imgUrl"
+            [alt]="category.name"
+            routerLink="/products/category/{{ category.id }}"
+          />
+          <p routerLink="/products/category/{{ category.id }}" class="text-center text-lg font-semibold cursor-pointer">{{ category.name }}</p>
+          <div class="mx-auto w-28 mt-3 space-x-8">
+            <a
+              routerLink="/category/update/{{ category.id }}"
+              class="text-2xl text-green-600 hover:text-green-500"
+              ><fa-icon [icon]="editIcon"></fa-icon
+            ></a>
+            <button
+              (click)="deleteCategory(category.id, category.name)"
+              class="text-2xl text-red-600 hover:text-red-600"
+            >
+              <fa-icon [icon]="deleteIcon"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div *ngIf="showModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+    <h2 class="text-xl font-bold mb-4">Are you sure you want to delete <span class="text-red-500 font-semibold">{{categoryNameToDelete}}</span> ?</h2>
+    <div class="flex justify-center space-x-4">
+      <button
+        class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+        (click)="confirmDelete()"
+      >
+        Confirm
+      </button>
+      <button
+        class="px-4 py-2 bg-gray-300 text-black rounded-md hover:bg-gray-400"
+        (click)="cancelDelete()"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

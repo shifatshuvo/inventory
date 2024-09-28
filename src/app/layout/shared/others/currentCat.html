@@ -1,0 +1,105 @@
+<div class="w-full h-screen overflow-y-scroll bg-gray-200">
+  <div class="flex-1 overflow-y-auto">
+    <div class="flex flex-col justify-center p-4">
+      <h1 class="text-3xl text-center text-gray-500 font-semibold my-6">
+        Manage Categories
+      </h1>
+      <p class="text-center text-xl text-red-600 font-semibold">
+        {{ deleteMessage }}
+      </p>
+      <div class="mb-4">
+        <button
+          routerLink="/category/add"
+          class="flex items-center bg-green-600 hover:bg-green-500 text-gray-50 font-semibold py-1 px-3 rounded-md"
+        >
+          <p class="text-base pr-2">Create new</p>
+          <fa-icon class="text-2xl" [icon]="plusIcon"></fa-icon>
+        </button>
+      </div>
+      <table class="table-auto text-center font-semibold">
+        <thead class="bg-gray-300 border-b-4 border-gray-600">
+            <th class="px-4 py-6">SL</th>
+            <th class="px-4 py-6">Photo</th>
+            <th class="px-4 py-6">Name</th>
+            <th class="px-4 py-6">Action</th>
+        </thead>
+        <tbody class="">
+          <tr *ngFor="let category of categories; let i = index"
+          class="border-b-2 2xl:border-b-4 border-gray-300"
+          >
+            <td class="px-4 py-2">{{ i + 1 }}</td>
+            <td class="w-48 px-4 py-2">
+              <img
+                class="w-48 rounded-md"
+                src="{{ category.imgUrl }}"
+                alt="pic of {{ category.name }}"
+              />
+            </td>
+            <td class="px-4 py-2 text-gray-500">{{ category.name }}</td>
+            <td class="px-4 py-2 space-x-6">
+              <a
+                routerLink="/category/update/{{ category.id }}"
+                class="text-2xl text-green-600 hover:text-green-500"
+                ><fa-icon [icon]="editIcon"></fa-icon
+              ></a>
+              <button
+                (click)="deleteCategory(category.id)"
+                class="text-2xl text-red-600 hover:text-red-500"
+              >
+                <fa-icon [icon]="deleteIcon"></fa-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="table-auto text-center font-semibold">
+  <thead class="bg-gray-300 border-b-4 border-gray-600">
+      <th class="px-4 py-6">SL</th>
+      <th class="px-4 py-6">Photo</th>
+      <th class="px-4 py-6">Name</th>
+      <th class="px-4 py-6">Action</th>
+  </thead>
+  <tbody class="">
+    <tr *ngFor="let category of categories; let i = index"
+    class="border-b-2 2xl:border-b-4 border-gray-300"
+    >
+      <td class="px-4 py-2">{{ i + 1 }}</td>
+      <td class="w-48 px-4 py-2">
+        <img
+          class="w-48 rounded-md"
+          src="{{ category.imgUrl }}"
+          alt="pic of {{ category.name }}"
+        />
+      </td>
+      <td class="px-4 py-2 text-gray-500">{{ category.name }}</td>
+      <td class="px-4 py-2 space-x-6">
+        <a
+          routerLink="/category/update/{{ category.id }}"
+          class="text-2xl text-green-600 hover:text-green-500"
+          ><fa-icon [icon]="editIcon"></fa-icon
+        ></a>
+        <button
+          (click)="deleteCategory(category.id)"
+          class="text-2xl text-red-600 hover:text-red-500"
+        >
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

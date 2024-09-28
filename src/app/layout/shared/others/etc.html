@@ -1,0 +1,122 @@
+  <!-- nav end -->
+
+  <!-- right div start -->
+  <div class="w-full h-screen overflow-y-scroll bg-gray-200">
+    <div class="w-full min-h-screen bg-gray-200">
+      <!-- orders -->
+      <div class="flex-1 overflow-y-auto">
+        <!-- 1st condition div start -->
+        <div>
+          <div class="flex flex-col justify-center p-4">
+            <h1 class="text-3xl text-center text-gray-500 font-semibold my-6">
+              Orders
+            </h1>
+            <p class="text-center text-xl text-red-600 font-semibold">
+              {{ OrderMessage }}
+            </p>
+            <div class="mb-4">
+              <button
+                routerLink="/admin/orders/create"
+                class="flex items-center bg-green-600 hover:bg-green-500 text-gray-50 font-semibold py-1 px-3 rounded-md"
+              >
+                <p class="text-base pr-2">Create new</p>
+                <fa-icon class="text-2xl" [icon]="plusIcon"></fa-icon>
+              </button>
+            </div>
+            <table class="table-auto text-left font-semibold">
+              <thead class="">
+                <tr class="bg-gray-300 text-gray-800">
+                  <th class="px-4 py-2">Order ID</th>
+                  <th class="px-4 py-2">User Name</th>
+                  <th class="px-4 py-2">User ID</th>
+                  <th class="px-4 py-2">Phone</th>
+                  <th class="px-4 py-2">Package</th>
+                  <th class="px-4 py-2">Quantity</th>
+                  <th class="px-4 py-2">Price</th>
+                  <th class="px-4 py-2">Action</th>
+                </tr>
+              </thead>
+              <!-- *ngFor="let item of orderList" -->
+              <!-- <tbody class="">
+                <tr >
+                  <td class="px-4 py-2">{{ item.id }}</td>
+                  <td class="px-4 py-2 text-gray-500">{{ item.user.name }}</td>
+                  <td class="px-4 py-2 text-gray-500">{{ item.user.id }}</td>
+                  <td class="px-4 py-2 text-gray-500">{{ item.user.phone }}</td>
+                  <td class="px-4 py-2 text-gray-500">{{ item.package.name }}</td>
+                  <td class="px-4 py-2 text-gray-500">{{ item.quantity }}</td>
+                  <td class="px-4 py-2 text-gray-500">{{ item.price }}</td>
+                  <td class="px-4 py-2 space-x-6">
+                    <a
+                      routerLink="/admin/update-order/{{ item.id }}"
+                      class="text-2xl text-green-600 hover:text-green-500"
+                      ><fa-icon [icon]="editIcon"></fa-icon
+                    ></a>
+                    <button
+                      (click)="deleteOrder(item.id)"
+                      class="text-2xl text-red-600 hover:text-red-500"
+                    >
+                      <fa-icon [icon]="deleteIcon"></fa-icon>
+                    </button>
+                  </td>
+                </tr>
+              </tbody> -->
+
+              <tbody class="">
+                <tr >
+                  <td class="px-4 py-2">5</td>
+                  <td class="px-4 py-2 text-gray-500">name</td>
+                  <td class="px-4 py-2 text-gray-500">img</td>
+                  <td class="px-4 py-2 text-gray-500">3422</td>
+                  <td class="px-4 py-2 text-gray-500">Phone</td>
+                  <td class="px-4 py-2 text-gray-500">17</td>
+                  <td class="px-4 py-2 text-gray-500">Nokia good phone</td>
+                  <td class="px-4 py-2 space-x-6">
+                    <a
+                      routerLink="/admin/update-order/{{ 4 }}"
+                      class="text-2xl text-green-600 hover:text-green-500"
+                      ><fa-icon [icon]="editIcon"></fa-icon
+                    ></a>
+                    <button
+                      (click)="deleteOrder(4)"
+                      class="text-2xl text-red-600 hover:text-red-500"
+                    >
+                      <fa-icon [icon]="deleteIcon"></fa-icon>
+                    </button>
+                  </td>
+                </tr>
+
+
+                <tr >
+                  <td class="px-4 py-2">5</td>
+                  <td class="px-4 py-2 text-gray-500">name</td>
+                  <td class="px-4 py-2 text-gray-500">img</td>
+                  <td class="px-4 py-2 text-gray-500">3422</td>
+                  <td class="px-4 py-2 text-gray-500">Phone</td>
+                  <td class="px-4 py-2 text-gray-500">17</td>
+                  <td class="px-4 py-2 text-gray-500">Nokia good phone</td>
+                  <td class="px-4 py-2 space-x-6">
+                    <a
+                      routerLink="/admin/update-order/{{ 4 }}"
+                      class="text-2xl text-green-600 hover:text-green-500"
+                      ><fa-icon [icon]="editIcon"></fa-icon
+                    ></a>
+                    <button
+                      (click)="deleteOrder(4)"
+                      class="text-2xl text-red-600 hover:text-red-500"
+                    >
+                      <fa-icon [icon]="deleteIcon"></fa-icon>
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+              
+            </table>
+          </div>
+        </div>
+        <!-- 1st condition div end -->
+      </div>
+    </div>
+  </div>
+  <!-- right div end -->

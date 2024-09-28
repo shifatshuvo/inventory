@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Mr Khan",
+      "email": "mrk@gmail.com",
+      "password": "r123"
+    },
+    {
+      "id": "2",
+      "name": "Mosh Hamadani",
+      "email": "mosh@gmail.com",
+      "password": "1122"
+    },
+    {
+      "id": "3",
+      "name": "Sakib Khan",
+      "email": "sakib@gmail.com",
+      "password": "s123"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Nokia Phone",
+      "imgUrl": "",
+      "price": 2500,
+      "color": "Black",
+      "quantity": 17,
+      "category": "Phone"
+    },
+    {
+      "id": "2",
+      "name": "Samsung TV",
+      "imgUrl": "",
+      "price": 44500,
+      "color": "Silver",
+      "quantity": 6,
+      "category": "TV"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Phone"
+    },
+    {
+      "id": "2",
+      "name": "TV"
+    }
+  ]
+}

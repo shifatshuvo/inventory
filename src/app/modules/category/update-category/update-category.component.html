@@ -1,0 +1,49 @@
+<div class="w-full h-screen overflow-y-scroll bg-gray-200">
+  <div class="flex items-center justify-center">
+    <div
+      class="md:w-3/6 mt-16 2xl:mt-28 bg-gray-300 px-4 py-6 rounded-md shadow-lg"
+    >
+      <button
+        class="font-semibold text-gray-600 hover:text-green-600"
+        routerLink="/category"
+      >
+        <fa-icon class="pr-2" [icon]="backIcon"></fa-icon>Back
+      </button>
+      <h1
+        class="text-3xl font-semibold text-center text-violet-600 font-serif py-4 px-2"
+      >
+        Update Category
+      </h1>
+      <p class="text-xl text-center text-green-600 font-semibold">
+        {{ createCategoryMessage }}
+      </p>
+      <form
+        #updateCat="ngForm"
+        (ngSubmit)="updateCategory(updateCat.value)"
+        class="w-full- flex flex-col items-center gap-y-3 my-4 mx-4"
+      >
+        <input
+          class="w-full outline-none rounded-md py-2 pl-4"
+          type="text"
+          name="name"
+          id="name"
+          ngModel="{{ categoryData?.name }}"
+          placeholder="Enter name"
+        />
+        <input
+          class="w-full outline-none rounded-md py-2 pl-4"
+          type="text"
+          name="imgUrl"
+          id="imgUrl"
+          ngModel="{{ categoryData?.imgUrl }}"
+          placeholder="Enter imgUrl"
+        />
+        <button
+          class="w-32 bg-blue-500 text-gray-50 font-semibold py-2 mt-6 rounded-md"
+        >
+          Update
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

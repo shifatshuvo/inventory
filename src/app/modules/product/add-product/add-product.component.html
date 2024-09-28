@@ -1,0 +1,92 @@
+<div class="flex items-center justify-center">
+  <div class="md:w-3/6 2xl:w-2/6 mt-8 bg-gray-300 px-4 py-6 rounded-md shadow-lg">
+    <button
+      class="font-semibold text-gray-600 hover:text-green-600"
+      routerLink="/products"
+    >
+      <fa-icon class="pr-2" [icon]="backIcon"></fa-icon>Back
+    </button>
+    <h1
+      class="text-3xl font-semibold text-center text-indigo-500 font-serif py-4 px-2"
+    >
+      Add Product
+    </h1>
+    <p class="text-xl text-center text-green-600 font-semibold">
+      {{ addMessage }}
+    </p>
+    <form
+      #adProduct="ngForm"
+      (ngSubmit)="addProduct(adProduct.value)"
+      class="w-full- flex flex-col items-center gap-y-3 my-4 mx-4"
+    >
+      <select
+        class="w-full py-2 pl-4 rounded-md"
+        id="userId"
+        [(ngModel)]="selectedCategory"
+        name="CategoryId"
+      >
+        <option class="" [ngValue]="undefined" [disabled]="true" selected>
+          Select an Category
+        </option>
+        <option
+          class="bg-gray-100"
+          *ngFor="let Category of categories"
+          [ngValue]="Category.id"
+        >
+          ID: {{ Category.id }} - {{ Category.name }}
+        </option>
+      </select>
+
+      <input
+        class="w-full outline-none rounded-md py-2 pl-4"
+        type="text"
+        name="name"
+        id="name"
+        ngModel
+        placeholder="Enter name"
+      />
+
+      <input
+        class="w-full outline-none rounded-md py-2 pl-4"
+        type="number"
+        name="price"
+        id="price"
+        ngModel
+        placeholder="Enter Price"
+      />
+
+      <input
+        class="w-full outline-none rounded-md py-2 pl-4"
+        type="number"
+        name="quantity"
+        id="quantity"
+        ngModel
+        placeholder="Enter quantity"
+      />
+
+      <input
+        class="w-full outline-none rounded-md py-2 pl-4"
+        type="text"
+        name="imgUrl"
+        id="imgUrl"
+        ngModel
+        placeholder="Enter imgUrl"
+      />
+
+      <textarea
+        class="w-full h-24 outline-none rounded-md py-2 pl-4"
+        type="text"
+        name="description"
+        id="description"
+        ngModel
+        placeholder="Enter Product Description"
+      ></textarea>
+
+      <button
+        class="w-32 bg-blue-500 hover:bg-blue-600 text-gray-50 font-semibold py-2 mt-6 rounded-md"
+      >
+        Add
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<!-- Sort by Category -->
+<div class="w-1/6- mr-2">
+  <select
+    class="w-full py-3 pl-4 pr-2 rounded-md"
+    [(ngModel)]="selectedCategory"
+    (change)="onSortByCategory()"
+  >
+    <!-- <option value="" disabled selected>Sort by Category</option> -->
+    <!-- <option class="" [ngValue]="undefined" [disabled]="true" selected>
+      Select Category
+    </option> -->
+
+    <!-- "All Products" Option -->
+    <!-- <option value="" routerLink="/products">All Products</option> -->
+    <option [ngValue]="undefined" selected>All Products</option>
+
+    <option
+      *ngFor="let Category of categories"
+      [ngValue]="Category.id"
+    >
+      {{ Category.name }}
+    </option>
+  </select>
+</div>

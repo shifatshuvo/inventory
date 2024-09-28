@@ -1,0 +1,86 @@
+<div>
+  <div class="flex flex-col h-screen bg-gray-900- bg-blue-950 text-white">
+    <div routerLink="/" class="py-4 2xl:mb-16 mb-6 cursor-pointer">
+      <!-- logo -->
+      <div class="flex items-center justify-center bg-gray-100 w-24 h-24 mx-auto rounded-full shadow-inner mb-2">
+        <p class="text-center text-3xl text-green-500 font-serif font-bold -rotate-1 -skew-y-6">S-IMS</p>
+      </div>
+      <h1 class="text-3xl text-center text-green-500 font-bold">
+        <span class="text-gray-100 font-sans">Spectrum</span> Inventory
+      </h1>
+    </div>
+    <nav class="flex-1">
+      <!-- Navigation items -->
+      <div>
+        <ul class="flex flex-col items-center gap-y-4 2xl:px-10 lg:px-6 px-2 text-xl">
+          <!-- Dropdown for Dashboard -->
+          <li class="relative group w-full">
+            <a
+              routerLink="/dashboard"
+              class="block w-full text-center- py-2 pl-12 2xl:pl-20 backdrop-brightness-125- rounded-sm bg-gradient-to-r from-sky-500 to-indigo-500 transform transition duration-500 hover:scale-105"
+            >
+            <fa-icon [icon]="dashboardIcon"></fa-icon>
+            Dashboard</a>
+          </li>
+
+          <!-- Dropdown for Products -->
+          <li class="relative group w-full">
+            <a
+              routerLink="/products"
+              class="block w-full text-center- py-2 pl-12 2xl:pl-20 rounded-sm bg-gradient-to-r from-sky-500 to-indigo-500 transform transition duration-500 hover:scale-105"
+            >
+            <fa-icon [icon]="productIcon"></fa-icon>
+            Products</a>
+            <!-- Dropdown menu -->
+            <ul
+              class="absolute left-full top-0 hidden group-hover:block bg-gray-600 text-white rounded-md w-40 z-50"
+            >
+              <li class="p-2 hover:bg-gray-500"><a routerLink="/products">Product List</a></li>
+              <li class="p-2 hover:bg-gray-500"><a routerLink="/products/add">Add</a></li>
+            </ul>
+          </li>
+
+          <!-- Dropdown for Category -->
+          <li class="relative group w-full">
+            <a
+              routerLink="/category"
+              class="block w-full text-center- py-2 pl-12 2xl:pl-20 rounded-sm bg-gradient-to-r from-sky-500 to-indigo-500 transform transition duration-500 hover:scale-105"
+            >
+            <fa-icon [icon]="categoryIcon"></fa-icon>
+            Category</a>
+            <!-- Dropdown menu -->
+            <ul
+              class="absolute left-full top-0 hidden group-hover:block bg-gray-600 text-white rounded-md w-40 z-50"
+            >
+              <li class="p-2 hover:bg-gray-500"><a routerLink="/category">Category List</a></li>
+              <li class="p-2 hover:bg-gray-500"><a routerLink="/category/add">Add</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- User profile section -->
+    <div class="my-8 space-y-2">
+      <img
+        src="https://i.ibb.co.com/DkFXg8b/b-pnjedt.jpg"
+        alt="Profile Picture"
+        class="md:w-16 md:h-16 2xl:w-20 2xl:h-20 mx-auto rounded-full ring-blue-500 ring-2 bg-cover"
+      />
+      <p class="text-center font-semibold 2xl:text-2xl">{{userData?.name}}</p>
+      <div class="flex justify-center">
+        <button class="text-center 2xl:py-2 2xl:px-6 py-1 px-4 rounded-sm bg-gradient-to-r from-sky-500 to-indigo-500 transform transition duration-1000 hover:scale-105">
+          View Profile
+        </button>
+      </div>
+      <div class="flex items-center justify-center gap-x-5">
+        <a routerLink="#" class="text-2xl hover:text-gray-300"
+          ><fa-icon [icon]="settingIcon"></fa-icon
+        ></a>
+        <button title="Logout" (click)="signOut()" class="text-2xl hover:text-gray-300">
+          <fa-icon [icon]="logoutIcon"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

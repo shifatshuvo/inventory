@@ -1,0 +1,13 @@
+<div class="flex items-center justify-center">
+  <div class="md:w-2/6 md:mt-24 xl:mt-28 2xl:mt-48 bg-gray-300 px-4 py-6 rounded-md shadow-inner">
+    <h1 class="text-3xl font-semibold text-center text-violet-600 font-serif py-4 px-2">Sign In</h1>
+
+    <form [formGroup]="signInForm" (ngSubmit)="submit()" class="w-full- flex flex-col items-center gap-y-3 my-4 mx-4">
+      <input formControlName="email" type="text" name="email" id="email" placeholder="Enter Email" class="w-full outline-none rounded-md py-2 pl-4 shadow-md"/>
+      <input formControlName="password" type="password" name="password" id="password" placeholder="Enter Password" class="w-full outline-none rounded-md py-2 pl-4 shadow-md"/>
+      <button type="submit" class="w-32 bg-blue-500 hover:bg-blue-600 text-gray-50 font-semibold py-2 mt-6 rounded-md shadow-inner">Sign In</button>
+    </form>
+
+    <p class="text-center cursor-pointer text-sm font-semibold text-blue-600 hover:text-blue-500 pt-2" routerLink="/auth/sign-up">New here? Create account</p>
+  </div>
+</div>

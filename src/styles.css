@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* table {
+  border-collapse: collapse;
+  width: 100%;
+} */
+
+/* th,
+td {
+  text-align: left;
+  padding: 8px;
+} */
+
+tr:nth-child(even) {
+  background-color: #7785fc3b;
+}
+tr:not(last-child) {
+  border-bottom-width: 3px;
+}
+tr:last-child {
+  border-bottom-width: 6px;
+}
+/* tr:nth-child(odd) {
+  background-color: #fff;
+} */
